@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claculadora de Notas</title>
+    <style>
+		.container {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin-top: 50px;
+		}
+		input {
+			margin-bottom: 20px;
+			padding: 10px;
+			border-radius: 5px;
+			border: none;
+			box-shadow: 2px 2px 5px #ccc;
+			font-size: 12px;
+			text-align: center;
+			width: 50%;
+            outline: none;
+            box-sizing: border-box;
+		}
+		h1 {
+			
+            font-size: 24px;
+			margin-bottom: 20px;
+		}
+		h2 {
+			font-size: 19px;
+			margin-top: 1px;
+            margin-bottom: 1px;
+		}
+        body {
+            background-color: hsla(0, 0%, 90%, 0.928);
+        }
+
+    </style>
+</head>
+<body>
+    <div class = "container">
+        <h2> Qual o seu nome?</h2> <input type ="text" id ="nomeinserido"><br>
+        <h2>Primeira nota</h2> <input type ="text" id ="nota1"><br>
+        <h2>Segunda nota</h2> <input type ="text" id ="nota2"><br>
+        <h2>Terceira nota</h2> <input type ="text" id ="nota3"><br>
+        <h2> Quarta nota</h2> <input type ="text" id ="nota4"><br>
+        <input type="button" value="Resultados" id="btnResultados"><br>
+        <p id="resultado"> </p>
+    </div>   
+        <script>
+
+            function geraResultados(){
+                var nome = document.getElementById("nomeinserido").value
+
+                var nota1 = Number(document.getElementById("nota1").value)
+                var nota2 = Number(document.getElementById("nota2").value)
+                var nota3 = Number(document.getElementById("nota3").value)
+                var nota4 = Number(document.getElementById("nota4").value)
+                
+                var media = Number((nota1 + nota2 + nota3 + nota4) / 4)
+                document.getElementById("resultado").innerHTML = nome + ", sua média é " + media
+                
+            }
+            
+            btnResultados.addEventListener("click", geraResultados)
+
+        </script>
+</body>
+</html>
